@@ -2,3 +2,4 @@
 2. Please change the path to your local path.
 3. Unet_newclass.py is for lumen and vessel wall segmentation.
 4. Bayesian_newclass.py is for plaque components segmentation.
+5. Example data is only for code testing.

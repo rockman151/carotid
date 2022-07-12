@@ -143,12 +143,12 @@ def loss_fn(y_true, y_pred):
     return loss
 model.compile(loss = loss_fn, optimizer = opt, metrics = [[metrics_RH]],experimental_run_tf_function=False)
 
-Train_all = load_data(path = '\Users\label_img_aug.mat',
+Train_all = load_data(path = '\Users\example_train_BNN.mat',
                       para_name = 'img')
-Label  = load_data(path = '\Users\label_seg_aug.mat',
+Label  = load_data(path = '\Users\example_label_BNN.mat',
                    para_name= 'seg')
 
-k_X_train, k_X_val, k_y_train, k_y_val = train_test_split(Train_all, Label, test_size=50/400)
+k_X_train, k_X_val, k_y_train, k_y_val = train_test_split(Train_all, Label, test_size=5/30)
 log_dir = '\Users\tensorboard'
 tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1)
 for ite in range(10):
