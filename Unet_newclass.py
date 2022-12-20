@@ -141,10 +141,10 @@ def loss_fn(y_true, y_pred):
     return loss
 model.compile(loss = loss_fn, optimizer = opt, metrics = [[metrics_vw]],experimental_run_tf_function=False)
 
-Train_all = load_data(path = '\Users\example_train_CNN.mat',
+Train_all = load_data(path = '\Users\label_img.mat',
                       para_name = 'img')
 Train_all = Train_all[:,:,:,0:1]
-Label  = load_data(path = '\Users\example_label_CNN.mat',
+Label  = load_data(path = '\Users\label_seg_5ch.mat',
                    para_name= 'seg')
 Label_back = Label[:,:,:,0:1]
 Label_fore = 1-Label[:,:,:,0:1]
